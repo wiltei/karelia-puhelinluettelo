@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { Provider } from "./context";
+import Puhelintieto from './components/Puhelintieto';
+import Puhelintiedot from './components/Puhelintiedot';
+import Ylatunniste from './Ylatunniste';
 
 function App() {
   return (
+    <Provider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Ylatunniste turvataso="olematon"/>
+      <div className="container">
+        <Puhelintiedot />
+      </div>
     </div>
+    </Provider>
   );
 }
 
 export default App;
+// jääty diaan 48 17.6.2022
